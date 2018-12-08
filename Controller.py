@@ -6,12 +6,15 @@ class ControllerMain:
         self.running = True
         self.main_menu = MainMenu()
     def run(self):
-        if ControllerMain.scene == 0:
-            self.main_menu.run()
-            ControllerMain.done == False
-        elif ControllerMain.scene == 1:
-            self.main_menu.run_scene2()
-            ControllerMain.done == False
+        while True:
+            if ControllerMain.scene == 0:
+                self.main_menu.run()
+            elif ControllerMain.scene == 1:
+                self.main_menu.run_scene2()
+            elif ControllerMain.scene == 2:
+                self.main_menu.shop()
+            elif ControllerMain.scene == 3:
+                self.main_menu.settings()
     def basic_keys(self, event):
         if event.type == pygame.QUIT:
             pygame.quit()
